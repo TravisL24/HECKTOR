@@ -1,0 +1,24 @@
+# paths:
+path_to_data: '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_test/hecktor_nii_resampled'  # directory with test images
+path_to_save_dir: '/home/server1080/2.0T/lt/HECKTOR/pre/test'  # predictions will be saved here
+
+
+
+path_to_weights:  # path or paths to weights. If multiple paths provided, an ensemble of models will be used
+  - '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_train/results/split_1/SimAm_1000/best_model_weights.pt'
+  # - '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_train/results/split_3/SimAm_1000/best_model_weights.pt'
+  # - '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_train/results/split_5/SimAm_1000/best_model_weights.pt'
+  # - '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_train/results/split_6/SimAm_1000/best_model_weights.pt'
+  # - '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_train/results/split_9/SimAm_1000/best_model_weights.pt'
+  
+
+
+# output:
+probs: false  # if `true`, the sigmoid output will be saved. Otherwise, 0.5-threshold will be applied to get binary labels
+
+# train settings:
+num_workers: 2  # for example, use a number of CPU cores
+
+n_cls: 2  # number of classes to predict (background and tumor)
+in_channels: 2  # number of input modalities
+n_filters: 4  # number of filters after the input

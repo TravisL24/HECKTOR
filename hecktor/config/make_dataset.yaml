@@ -1,0 +1,12 @@
+# path_to_input: '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_train/hecktor_nii/'  # directory with images
+# path_to_bb: '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_train/hecktor2021_bbox_training.csv'  # file with bounding box coordinates
+# path_to_output: '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_train/hecktor_nii_resampled/'  # directory to save resampled images
+# is_mask_available: true  # if `true`, masks will be preprocessed. Use `false`, if masks are unavailable
+
+# for predict
+path_to_input: '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_test/hecktor_nii/'  # directory with images
+path_to_bb: '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_test/hecktor2021_bbox_testing.csv'  # file with bounding box coordinates
+path_to_output: '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_test/hecktor_nii_resampled/'  # directory to save resampled images
+is_mask_available: false  # if `true`, masks will be preprocessed. Use `false`, if masks are unavailable
+
+verbose: true  # if `true`, the progress bar will be shown

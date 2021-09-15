@@ -1,0 +1,22 @@
+# paths:
+path_to_data: '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_train/hecktor_nii_resampled/'  # directory with images
+path_to_pkl: '/home/server1080/Documents/lt/HECKTOR/hecktor/src/data/splits/split_5.pkl'  # pkl file with train / val splits
+path_to_save_dir: '/home/server1080/2.0T/lt/HECKTOR/hecktor2021_train/results/split_5/simam1000'  # all results (weights, learning curves, etc) will be saved here
+
+# train settings:
+train_batch_size: 4
+val_batch_size: 1
+num_workers: 2  # for example, use a number of CPU cores
+
+e_lambda: 1e-4 # init lambda for SimAM
+lr: 1e-3  # initial learning rate
+n_epochs: 1000  # number of training epochs (300 was used in the paper)
+n_cls: 2  # number of classes to predict (background and tumor)
+in_channels: 2  # number of input modalities
+n_filters: 4  # number of filters after the input (24 was used in the paper)
+
+T_0: 25  # parameter for 'torch.optim.lr_scheduler.CosineAnnealingWarmRestarts'
+eta_min: 1e-5  # parameter for 'torch.optim.lr_scheduler.CosineAnnealingWarmRestarts'
+
+# model:
+baseline: false  # if `true`, U-Net will be used. Otherwise, the model described in the paper will be trained.
