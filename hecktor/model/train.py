@@ -77,12 +77,11 @@ def main(args):
     if baseline:
         model = models.BaselineUNet(in_channels, n_cls, n_filters)
     else:
-        model = models.FastSmoothSENormDeepUNet_supervision_skip_no_drop(in_channels, n_cls, n_filters, reduction)
-        # model = models.ResSimAM_Unet(in_channels, n_cls, n_filters, e_lambda)
+        model = models.ResSimAM_Unet(in_channels, n_cls, n_filters, e_lambda)
 
-    # criterion = losses.Dice_and_FocalLoss()
+    criterion = losses.Dice_and_FocalLoss()
     # criterion = losses.FocalLoss()
-    criterion = losses.DiceLoss()
+    # criterion = losses.DiceLoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=lr, betas=(0.9, 0.99))
     metric = metrics.dice
     scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_0=T_0, eta_min=eta_min)
